@@ -1,5 +1,5 @@
 Billetera virtual 
-con registro, login, meny, enviar dinero, deposito, ultimos movimientos, diferente css a la billertera L6
+con registro, login, menu, enviar dinero, deposito, ultimos movimientos. Diferente css a la billertera L6
 Ayuda con ClaudeIA
 
 
