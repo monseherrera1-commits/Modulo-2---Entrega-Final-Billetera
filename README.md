@@ -1,4 +1,4 @@
-Billeretera viurtal 
+Billetera virtual 
 con registro, login, meny, enviar dinero, deposito, ultimos movimientos, diferente css a la billertera L6
 Ayuda con ClaudeIA
 
