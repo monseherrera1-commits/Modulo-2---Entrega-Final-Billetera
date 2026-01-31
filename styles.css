@@ -1,0 +1,151 @@
+/* ============================================
+   CSS MINIMALISTA - BILLETERA DIGITAL
+   ============================================ */
+
+/* Estilos generales */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+
+}
+
+/* Fondo con gradiente */
+.bg-image {
+    background: linear-gradient(135deg, #d4d4d4 0%, #e7e7e7 100%);
+
+}
+
+
+/* Tarjeta de saldo en el menú */
+.saldo-card {
+    background: linear-gradient(135deg, #addb92 0%, #8297a8 100%);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Botones con sombra */
+.shadow {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2) !important;
+    transition: all 0.3s ease;
+}
+
+.shadow:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3) !important;
+}
+
+
+/* Contactos */
+.contacto-item {
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.contacto-item:hover {
+    box-shadow: 0 4px 12px rgb(157, 184, 154);
+    transform: center;
+    transform: scale(1.01);
+}
+
+/*Botones*/
+
+.btn {
+    background: linear-gradient(135deg, #858585 0%, #dddddd 100%);
+    padding: 12px 25px;
+    border: none;
+    border-radius: 3px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 5px;
+    transition: all 0.4s;
+    color: #ffffff;
+    
+    
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    
+}
+
+.btn-info:hover{
+    color: #ffffff;
+}
+
+#btnTransacciones:hover {
+    color:#ffffff
+}
+
+#btnCerrarSesion{
+    background: linear-gradient(135deg, #adadad 0%, #6d6d6d 100%);
+}
+
+#btnVolver{
+    background: linear-gradient(135deg, #adadad 0%, #6d6d6d 100%);
+}
+
+#btnCancelarContacto{
+    background: linear-gradient(135deg, #adadad 0%, #6d6d6d 100%);
+}
+
+
+/*cajas contenedoras*/
+
+.container{
+    border-radius:3px;
+}
+
+/*bordesUlttranfs*/
+
+
+#cartas{
+    background: rgb(241, 241, 238);
+    size: px;
+}
+
+#bordecartassucces{
+    border: 2px solid #7db13a;
+}
+
+#bordecartasdanger{
+    border: 2px solid #b63838;
+}
+
+#bordecartaswarning{
+    border: 2px solid #ccbe3e;
+}
+
+
+
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 768px) {
+    .card-body {
+        padding: 2rem 1.5rem !important;
+    }
+    
+    h1, h2 {
+        font-size: 1.5rem !important;
+    }
+    
+    .saldo-card h1 {
+        font-size: 2rem !important;
+    }
+}
+
+/* Alertas con animación */
+.alert {
+    animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+

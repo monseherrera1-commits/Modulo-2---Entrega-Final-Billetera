@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+    <title>Ingresar - Billetera Digital</title>
+</head>
+<body>
+    
+    <section class="vh-100 bg-image">
+        <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+            <div class="container h-100">
+                <div class="row d-flex justify-content-center align-items-center h-100">
+                    <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+                        <div class="card" style="border-radius: 15px;">
+                            <div class="card-body p-5">
+                                <h2 class="text-uppercase text-center mb-4">Billetera Digital</h2>
+                                <p class="text-center text-muted mb-4">Ingresa a tu cuenta</p>
+
+                                <form id="loginForm">
+                                    <div class="form-outline mb-4">
+                                        <label class="form-label" for="emailLogin">Email</label>
+                                        <input type="email" id="emailLogin" class="form-control form-control-lg" placeholder="ejemplo@gmail.com" required />
+                                    </div>
+
+                                    <div class="form-outline mb-4">
+                                        <label class="form-label" for="passwordLogin">Contraseña</label>
+                                        <input type="password" id="passwordLogin" class="form-control form-control-lg" placeholder="Ingrese su contraseña" required />
+                                    </div>
+
+                                    <!-- Usuario por defecto info -->
+                                    <div class="alert alert-info">
+                                        <small>
+                                            <strong>Usuario de prueba:</strong><br>
+                                            Email: admin@gmail.com<br>
+                                            Contraseña: 12345678
+                                        </small>
+                                    </div>
+
+                                    <!-- Contenedor de alertas -->
+                                    <div id="alert-container"></div>
+
+                                    <div class="d-flex justify-content-center">
+                                        <button type="submit" class="btn btn-success btn-block btn-lg w-100 gradient-custom-4">Ingresar</button>
+                                    </div>
+
+                                    <p class="text-center text-muted mt-4 mb-0">¿No tienes una cuenta? <a href="registro.html" class="fw-bold text-body"><u>Regístrate aquí</u></a></p>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" 
+    crossorigin="anonymous"></script>
+    <!-- App JS -->
+    <script src="app.js"></script>
+</body>
+</html>

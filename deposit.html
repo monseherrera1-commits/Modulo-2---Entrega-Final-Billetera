@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+    <title>Depositar - Billetera Digital</title>
+</head>
+<body>
+    
+    <section class="vh-100 bg-image">
+        <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+            <div class="container">
+                <div class="row d-flex justify-content-center align-items-center h-100">
+                    <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+                        <div class="card">
+                            <div class="card-body p-5">
+                                <h2 class="text-uppercase text-center mb-4"> Realizar Depósito</h2>
+                                
+                                <div class="text-center mb-4 p-3 bg-light rounded">
+                                    <p class="mb-1">Saldo actual:</p>
+                                    <h3 class="text-success fw-bold">$<span id="saldoActual">0</span></h3>
+                                    <small class="text-muted">CLP</small>
+                                </div>
+
+                                <form id="formDeposito">
+                                    <div class="form-outline mb-4">
+                                        <label class="form-label" for="montoDeposito"> Monto a depositar (CLP)</label>
+                                        <input type="number" id="montoDeposito" class="form-control form-control-lg" min="1" step="1" placeholder="Ej: 50000" required />
+                                        <small class="text-muted">Ingrese el monto en pesos chilenos</small>
+                                    </div>
+
+                                    <!-- Contenedor de alertas -->
+                                    <div id="alert-container"></div>
+
+                                    <div class="d-grid gap-2">
+                                        <button type="submit" class="btn btn-success btn-lg shadow">
+                                            Realizar Depósito
+                                        </button>
+                                        
+                                        <button type="button" id="btnVolver" class="btn btn-secondary btn-lg">
+                                            Volver al Menú
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" 
+    crossorigin="anonymous"></script>
+    <!-- App JS -->
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+    <title>Registro - Billetera Digital</title>
+</head>
+<body>
+    
+    <section class="min-vh-100 bg-image py-5">
+        <div class="mask d-flex align-items-center gradient-custom-3">
+            <div class="container">
+                <div class="row d-flex justify-content-center align-items-center">
+                    <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+                        <div class="card" style="border-radius: 15px;">
+                            <div class="card-body p-5">
+                                <h2 class="text-uppercase text-center mb-4">Crear cuenta</h2>
+                                <p class="text-center text-muted mb-4">Completa tus datos para registrarte</p>
+
+                                <form id="registroForm">
+                                    <div class="form-outline mb-3">
+                                        <label class="form-label" for="nombreRegistro">Nombre completo</label>
+                                        <input type="text" id="nombreRegistro" class="form-control form-control-lg" placeholder="Juan Pérez" required/>
+                                    </div>
+
+                                    <div class="form-outline mb-3">
+                                        <label class="form-label" for="emailRegistro">Email</label>
+                                        <input type="email" id="emailRegistro" class="form-control form-control-lg" placeholder="ejemplo@gmail.com" required/>
+                                    </div>
+
+                                    <div class="form-outline mb-3">
+                                        <label class="form-label" for="fechaNacimiento">Fecha de Nacimiento</label>
+                                        <input type="date" id="fechaNacimiento" class="form-control form-control-lg" required/>
+                                    </div>
+
+                                    <div class="form-outline mb-3">
+                                        <label class="form-label" for="passwordRegistro">Contraseña</label>
+                                        <input type="password" id="passwordRegistro" class="form-control form-control-lg" placeholder="8-20 caracteres" required/>
+                                    </div>
+
+                                    <div class="form-outline mb-3">
+                                        <label class="form-label" for="passwordConfirm">Repetir contraseña</label>
+                                        <input type="password" id="passwordConfirm" class="form-control form-control-lg" placeholder="Repita su contraseña" required/>
+                                    </div>
+                                    
+                                    <div class="form-outline mb-3">
+                                        <label class="form-label" for="direccion">Dirección</label>
+                                        <input type="text" id="direccion" class="form-control form-control-lg" placeholder="Calle Principal 123" required/>
+                                    </div>
+
+                                    <div class="form-outline mb-3">
+                                        <label class="form-label" for="telefono">Teléfono</label>
+                                        <input type="tel" id="telefono" class="form-control form-control-lg" placeholder="+569 12345678" required/>
+                                    </div>
+
+                                    <div class="form-check d-flex justify-content-center mb-4">
+                                        <input class="form-check-input me-2" type="checkbox" value="" id="terminos" required/>
+                                        <label class="form-check-label" for="terminos">
+                                            Estoy de acuerdo con los <a href="#!" class="text-body"><u>Términos de servicio</u></a>
+                                        </label>
+                                    </div>
+
+                                    <!-- Contenedor de alertas -->
+                                    <div id="alert-container"></div>
+
+                                    <div class="d-flex justify-content-center">
+                                        <button type="submit" class="btn btn-success btn-block btn-lg w-100 gradient-custom-4">Registrarse</button>
+                                    </div>
+
+                                    <p class="text-center text-muted mt-4 mb-0">¿Ya tienes una cuenta? <a href="login.html" class="fw-bold text-body"><u>Ingresa aquí</u></a></p>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" 
+    crossorigin="anonymous"></script>
+    <!-- App JS -->
+    <script src="app.js"></script>
+</body>
+</html>

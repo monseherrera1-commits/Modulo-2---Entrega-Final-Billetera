@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+    <title>Enviar Dinero - Billetera Digital</title>
+</head>
+<body>
+    
+    <section class="min-vh-100 bg-image py-5">
+        <div class="mask d-flex align-items-center gradient-custom-3">
+            <div class="container">
+                <div class="row d-flex justify-content-center align-items-center">
+                    <div class="col-12 col-md-10 col-lg-8">
+                        <div class="card">
+                            <div class="card-body p-5">
+                                <h2 class="text-uppercase text-center mb-4">Enviar Dinero</h2>
+                                
+                                <div class="text-center mb-4 p-3 bg-light rounded">
+                                    <p class="mb-1">Saldo actual:</p>
+                                    <h3 class="text-success fw-bold">$<span id="saldoActual">0</span></h3>
+                                    <small class="text-muted">CLP</small>
+                                </div>
+
+                                <!-- Lista de contactos ESTÁTICOS -->
+                                <h5 class="mb-3">Mis Contactos</h5>
+                                <div id="listaContactos" class="mb-4">
+                                    
+                                    <!-- Contacto 1: Juan Pérez (ESTÁTICO HTML) -->
+                                    <div class="contacto-item card mb-2">
+                                        <div class="card-body d-flex justify-content-between align-items-center">
+                                            <div class="contacto-info" style="cursor:pointer;">
+                                                <strong>Juan Pérez</strong><br>
+                                                <small>Alias: juan.perez</small><br>
+                                                <small>CBU: 1234567890123456789012</small><br>
+                                                <small>Banco: Banco Estado</small>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Contacto 2: María González (ESTÁTICO HTML) -->
+                                    <div class="contacto-item card mb-2">
+                                        <div class="card-body d-flex justify-content-between align-items-center">
+                                            <div class="contacto-info" style="cursor:pointer;">
+                                                <strong>María González</strong><br>
+                                                <small>Alias: maria.gonzalez</small><br>
+                                                <small>CBU: 9876543210987654321098</small><br>
+                                                <small>Banco: Banco Chile</small>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Contacto 3: Pedro Rodríguez (ESTÁTICO HTML) -->
+                                    <div class="contacto-item card mb-2">
+                                        <div class="card-body d-flex justify-content-between align-items-center">
+                                            <div class="contacto-info" style="cursor:pointer;">
+                                                <strong>Pedro Rodríguez</strong><br>
+                                                <small>Alias: pedro.rodriguez</small><br>
+                                                <small>CBU: 5555666677778888999900</small><br>
+                                                <small>Banco: Banco Santander</small>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Los contactos dinámicos se agregarán AQUÍ mediante JavaScript -->
+                                    
+                                </div>
+
+                                <!-- Botones de acción -->
+                                <div class="d-grid gap-2 mb-3">
+                                    <button id="btnAgregarContacto" class="btn btn-primary btn-lg shadow">
+                                        Agregar Nuevo Contacto
+                                    </button>
+                                    
+                                    <button id="btnEnviarDinero" class="btn btn-success btn-lg shadow" style="display:none;">
+                                        Enviar Dinero al Contacto Seleccionado
+                                    </button>
+                                </div>
+
+                                <!-- Formulario para agregar contacto (oculto) -->
+                                <div id="formNuevoContacto" class="border p-4 rounded mb-4 shadow-sm" style="display:none;">
+                                    <h5 class="mb-3">Agregar Nuevo Contacto</h5>
+                                    <form id="formularioContacto">
+                                        <div class="mb-3">
+                                            <label class="form-label" for="nombreContacto">Nombre y Apellido</label>
+                                            <input type="text" id="nombreContacto" class="form-control" placeholder="Ej: Carlos López" required />
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label" for="cbuContacto">CBU (22 dígitos)</label>
+                                            <input type="text" id="cbuContacto" class="form-control" maxlength="22" placeholder="1234567890123456789012" required />
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label" for="aliasContacto">Alias</label>
+                                            <input type="text" id="aliasContacto" class="form-control" placeholder="Ej: carlos.lopez" required />
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label" for="bancoContacto">Banco</label>
+                                            <input type="text" id="bancoContacto" class="form-control" placeholder="Ej: Banco Estado" required />
+                                        </div>
+                                        <div class="d-grid gap-2">
+                                            <button type="submit" class="btn btn-success">Guardar Contacto</button>
+                                            <button type="button" id="btnCancelarContacto" class="btn btn-secondary">Cancelar</button>
+                                        </div>
+                                    </form>
+                                </div>
+
+                                <!-- Formulario para enviar dinero (oculto) -->
+                                <div id="formEnvio" class="border p-4 rounded mb-4 shadow-sm" style="display:none;">
+                                    <h5 class="mb-3">Enviar dinero a: <span id="nombreDestinatario" class="text-primary fw-bold"></span></h5>
+                                    <form id="formularioEnvio">
+                                        <div class="mb-3">
+                                            <label class="form-label" for="montoEnviar">Monto a enviar (CLP)</label>
+                                            <input type="number" id="montoEnviar" class="form-control form-control-lg" min="1" step="1" placeholder="Ej: 25000" required />
+                                        </div>
+                                        <div class="d-grid gap-2">
+                                            <button type="submit" class="btn btn-success btn-lg">Confirmar Envío</button>
+                                            <button type="button" id="btnCancelarEnvio" class="btn btn-secondary">Cancelar</button>
+                                        </div>
+                                    </form>
+                                </div>
+
+                                <!-- Contenedor de alertas -->
+                                <div id="alert-container"></div>
+
+                                <!-- Botón volver -->
+                                <div class="d-grid">
+                                    <button id="btnVolver" class="btn btn-secondary btn-lg">
+                                        Volver al Menú
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" 
+    crossorigin="anonymous"></script>
+    <!-- App JS -->
+    <script src="app.js"></script>
+</body>
+</html>
